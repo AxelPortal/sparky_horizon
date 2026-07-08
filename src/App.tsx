@@ -4,6 +4,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Songs from './pages/Songs';
+import Favorites from './pages/Favorites';
 
 // Componente para rutas protegidas
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
@@ -20,6 +21,8 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/songs" element={<ProtectedRoute><Songs /></ProtectedRoute>} />
+          <Route path="/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
+          
         </Routes>
       </AuthProvider>
     </BrowserRouter>
